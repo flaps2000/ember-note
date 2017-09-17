@@ -1,0 +1,21 @@
+{
+  "name": "ember-note",
+  "description": "Small description for ember-note goes here",
+  "main": "",
+  "authors": [
+    "Martyn Wilson <flaps_2000@yahoo.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/flaps2000/ember-note",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
