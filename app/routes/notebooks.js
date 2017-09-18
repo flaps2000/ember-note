@@ -5,5 +5,19 @@ export default Ember.Route.extend({
     return this.store.query('notebook',{user: params.user_id});
   },
   actions: {
+    addNotebook: function() {
+      let notebook = this.store.createRecord('notebook', {
+        title: this.controller.get('title'),
+        user: this.controllerFor('application').get('user')
+      });
+      console.log("notebook, ", notebook);
+      notebook.save().then(() => {
+        console.log("this", this);
+        this.controller.set('title',null);
+        this.refresh();
+      }, function() {
+        alert('save failed');
+      });
+    }
   }
 });

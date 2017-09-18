@@ -9,6 +9,7 @@ export default function() {
   this.get('/notes');
   this.get('/notes/:id');
   this.put('/notes/:id');
+  this.patch('/notes/:id');
   this.post('/notes');
   this.del('/notes/:id');
   this.get('/users', (schema, request) => {
