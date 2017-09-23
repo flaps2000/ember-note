@@ -3,9 +3,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     saveNote: function() {
-      console.log("this", this);
-      console.log("this.get('note'), ", this.get('note'));
-      this.get('note').save();
+      this.get('note').save().then(() => {
+        this.sendAction('close');
+      }, function() {
+        alert('save failed');
+      });
     },
     closeNote: function() {
       this.sendAction('close');

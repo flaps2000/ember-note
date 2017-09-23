@@ -4,10 +4,10 @@
       Welcome to EmberNote
     </div>
     <div class="col-md-10">
-      {{#if user}}
-        Hello, {{user.name}}
+      {{#if session}}
+        Hello, {{session.user.name}}
       {{/if}}
-      {{#unless user}}
+      {{#unless session}}
         {{#link-to 'register'}}register{{/link-to}}&nbsp;
         {{#link-to 'login'}}login{{/link-to}}
       {{/unless}}

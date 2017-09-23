@@ -8,11 +8,9 @@ export default Ember.Route.extend({
     addNotebook: function() {
       let notebook = this.store.createRecord('notebook', {
         title: this.controller.get('title'),
-        user: this.controllerFor('application').get('user')
+        user: this.session.get('user')
       });
-      console.log("notebook, ", notebook);
       notebook.save().then(() => {
-        console.log("this", this);
         this.controller.set('title',null);
         this.refresh();
       }, function() {
